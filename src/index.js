@@ -1,4 +1,35 @@
-import { createStore } from "redux";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //vanilla redux counter
 // //state :: application에서 바뀌는 data를 말한다
@@ -51,38 +82,76 @@ import { createStore } from "redux";
 
 
 //pure redux todo list 
-const form = document.querySelector("form");
-const input = document.querySelector("input");
+// const form = document.querySelector("form");
+// const input = document.querySelector("input");
 // const ul = document.querySelector("ul");
 
-const ADD_TODO = "ADD_TODO";
-const DELETE_TODO = "DELETE_TODO";
+// const ADD_TODO = "ADD_TODO";
+// const DELETE_TODO = "DELETE_TODO";
 
+// const addToDo = (text) => {
+//   return {
+//     type: ADD_TODO, 
+//     text 
+//   }
+// }
+// const deleteToDo = (id) => {
+//   return {
+//     type: deleteToDo, 
+//     id
+//   }
+// }
 
-const reducer = (state = [], action) => {
-  console.log(action);
-  switch (action.type) {
-    case ADD_TODO: 
-      return [...state, { text: action.type }];
-    case DELETE_TODO:
-      return [];
-    default:
-      return state;
-  }
-};
+// const reducer = (state = [], action) => {
+//   console.log(action);
+//   switch (action.type) {
+//     case ADD_TODO: 
+//       return [ { text: action.text, id: Date.now() }, ...state ];
+//     case DELETE_TODO:
+//       return state.filter((toDo) => toDo.id !== action.id);
+//     default:
+//       return state;
+//   }
+// };
 
-const store = createStore(reducer);
+// const store = createStore(reducer);
 
-store.subscribe(() => console.log(store.getState()));
+// store.subscribe(() => console.log(store.getState()));
 
-const onSubmit = (e) => {
-  e.preventDefault();
-  const toDo = input.value;
-  console.log(toDo);
-  input.value = "";
-  store.dispatch({ type: ADD_TODO, text: toDo});
-};
+// const dispatchAddToDo = (text) => {
+//   store.dispatch(addToDo(text));
+// }
 
-form.addEventListener("submit", onSubmit);
+// const dispatchDeleteToDo = (e) => {
+//   const id = parseInt(e.target.parentNode.id);
+//   store.dispatch(deleteToDo(id))
+// }
+
+// const painToDos = () => {
+//   const toDos = store.getState();
+//   ul.innerHTML = "";
+//   toDos.forEach((toDo) => {
+//     const li = document.createElement("li");
+//     const btn = document.createElement("button");
+//     btn.innerText = "Delete";
+//     btn.addEventListener("click", dispatchDeleteToDo);
+//     li.id = toDo.id;
+//     li.innerText = toDo.text;
+//     li.appendChild(btn);
+//     ul.appendChild(li);
+//   });
+// };
+
+// store.subscribe(painToDos);
+
+// const onSubmit = (e) => {
+//   e.preventDefault();
+//   const toDo = input.value;
+//   console.log(toDo);
+//   input.value = "";
+//   dispatchAddToDo(toDo);
+// };
+
+// form.addEventListener("submit", onSubmit);
 
 
